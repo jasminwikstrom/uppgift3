@@ -38,7 +38,18 @@ public class GameBoard {
         return board;
     }
 
+    public void almostFinishGame() {
 
+        board = new Tile[][]
+                {
+                        {new Tile(1, 0, 0), new Tile(2, 1, 0), new Tile(3, 2, 0), new Tile(4, 3, 0)},
+                        {new Tile(5, 0, 1), new Tile(6, 1, 1), new Tile(7, 2, 1), new Tile(8, 3, 1)},
+                        {new Tile(9, 0, 2), new Tile(10, 1, 2), new Tile(11, 2, 2), new Tile(12, 3, 2)},
+                        {new Tile(13, 0, 3), new Tile(14, 1, 3), new Tile(0, 2, 3), new Tile(15, 3, 3)}
+                };
+
+        checkIfFinished();
+    }
 
     public boolean isFinished() {
         return finished;

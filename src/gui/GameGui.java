@@ -26,7 +26,7 @@ public class GameGui extends JPanel {
 
         cheatButton.addActionListener(actionEvent -> {
             gameBoard.newGame();
-
+            gameBoard.almostFinishGame();
             boardGui.repaint();
         });
 
