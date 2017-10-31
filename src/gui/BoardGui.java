@@ -11,8 +11,8 @@ import java.awt.event.MouseListener;
 
 public class BoardGui extends JPanel implements MouseListener {
 
-    private static final int CELL_SIZE = 80;
-    private Font font = new Font("Comic Sans MS", Font.BOLD, CELL_SIZE / 2);
+    private static final int CELL_SIZE = 95;
+    private Font font = new Font("Helvetica", Font.BOLD, CELL_SIZE / 3);
     private GameBoard gameBoard;
 
     public BoardGui(GameBoard gameBoard) {
@@ -23,10 +23,11 @@ public class BoardGui extends JPanel implements MouseListener {
         int totalHeight = CELL_SIZE * 4;
 
         this.setPreferredSize(new Dimension(totalWidth, totalHeight));
-        this.setBackground(Color.BLACK);
+        this.setBackground(Color.DARK_GRAY);
         this.addMouseListener(this);
     }
 
+    // Hämtar aktuella spelbrädet, går igenom brädets tiles och ritar ut dom. Om numret på tilen är 0,skrivs tomma strängen ut
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -42,11 +43,11 @@ public class BoardGui extends JPanel implements MouseListener {
                         paintedNumber = Integer.toString(number);
                     }
 
-                    g.setColor(Color.LIGHT_GRAY);
+                    g.setColor(Color.DARK_GRAY);
                     g.fillRect(x + 1, y + 1, CELL_SIZE - 2, CELL_SIZE - 2);
-                    g.setColor(Color.PINK.darker());
+                    g.setColor(Color.pink.darker());
                     g.setFont(font);
-                    g.drawString(paintedNumber, x + 16, y + 55);
+                    g.drawString(paintedNumber, x + 30, y + 60);
                 }
             }
         }

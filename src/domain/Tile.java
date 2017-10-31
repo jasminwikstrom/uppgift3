@@ -1,6 +1,6 @@
 package domain;
 
-
+//Information om plattorna,värde och position
 
 public class Tile {
 
