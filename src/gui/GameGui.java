@@ -13,6 +13,7 @@ public class GameGui extends JPanel {
     public GameGui() {
 
         JButton newGameButton = new JButton("New Game");
+        JButton cheatButton = new JButton("Cheat!");
         BoardGui boardGui = new BoardGui(gameBoard);
         boardGui.setBackground(null);
 
@@ -23,8 +24,16 @@ public class GameGui extends JPanel {
 
 
 
-        add(newGameButton);
+        cheatButton.addActionListener(actionEvent -> {
+            gameBoard.newGame();
 
+            boardGui.repaint();
+        });
+
+
+
+        add(newGameButton);
+        add(cheatButton);
         add(boardGui);
         setVisible(true);
 
