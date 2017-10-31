@@ -1,6 +1,6 @@
 package game;
 
-
+//Spelets "state". Alla tiles positioner och innehåll. Med metoder för att kunna uppdatera statet på spelet.
 import domain.Tile;
 
 import java.util.ArrayList;
